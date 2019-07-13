@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282C34;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  top: 0;
+}
+
+.exercise-table {
+  padding: 12px;
+  display: grid;
+}
+
+th {
+  text-align: left;
+}
+
+tr {
+  text-align: left;
+}
+
+.selected-exercise {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+}
+
+table {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+button {
+  width: 100%;
+}
