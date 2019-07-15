@@ -9,7 +9,7 @@ export const removeExercise = id => ({
 });
 
 export const toggleExerciseComplete = id => ({
-  type: "COMPLETE_EXERCISE",
+  type: "TOGGLE_EXERCISE",
   id
 });
 

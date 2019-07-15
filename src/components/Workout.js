@@ -25,8 +25,8 @@ const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete 
         </tr>
         {workout.map(currentExercise => {
           const { id } = currentExercise;
-          const exercise = exerciseMap[id];
-          return <SelectedExercise key={id} {...exercise} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
+          const { name } = exerciseMap[id];
+          return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
         })}
       </tbody>
     </table>

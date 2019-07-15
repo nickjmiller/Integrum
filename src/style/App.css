@@ -53,6 +53,34 @@ button {
   width: 60vw;
 }
 
+.exercise-table {
+  margin: 4px;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+thead {
+  display: table;
+  table-layout:fixed;
+  width: 100%;
+  border-bottom: 1px solid;
+}
+.exercise-body {
+  display: block;
+  height: 40vh;
+  overflow-y: scroll;
+  width: 100%;
+}
+tbody tr {
+  display: table;
+  table-layout:fixed;
+  width: 100%;
+}
+th, td {
+  width: auto;
+}
+
 .start-over {
   width: 100px;
 }

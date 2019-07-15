@@ -18,7 +18,7 @@ const workout = (state = [], action) => {
         case "REMOVE_EXERCISE":
             newState = state.filter(exercise => exercise.id !== action.id);
             break;
-        case "COMPLETE_EXERCISE":
+        case "TOGGLE_EXERCISE":
             newState = state.map((exercise) => {
                 if (exercise.id === action.id) {
                     exercise.complete = !exercise.complete;
