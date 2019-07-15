@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { removeExercise } from "../actions";
+import { toggleExerciseComplete, removeExercise } from "../actions";
 import Workout from "../components/Workout";
 
 
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    removeExercise: id => dispatch(removeExercise(id))
+    removeExercise: id => dispatch(removeExercise(id)),
+    toggleExerciseComplete: id => dispatch(toggleExerciseComplete(id)),
 });
 
 export default connect(

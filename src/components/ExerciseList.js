@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Exercise from "./Exercise";
 
-const ExerciseList = ({ exercises, addExercise }) => (
+const ExerciseList = ({ exercises, openExerciseModal }) => (
   <table>
     <tbody>
       <tr>
@@ -17,7 +17,7 @@ const ExerciseList = ({ exercises, addExercise }) => (
           </th>
       </tr>
         {exercises.map(exercise => (
-            <Exercise key={exercise.id} {...exercise} onClick={() => addExercise(exercise.id)} />
+          <Exercise key={exercise.id} {...exercise} onClick={() => openExerciseModal(exercise)} />
         ))}
     </tbody>
   </table>
@@ -31,7 +31,7 @@ ExerciseList.propTypes = {
       name: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  addExercise: PropTypes.func.isRequired
+  openExerciseModal: PropTypes.func.isRequired,
 };
 
 export default ExerciseList;

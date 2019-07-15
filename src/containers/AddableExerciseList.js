@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addExercise } from "../actions";
+import { showModal } from "../actions";
 import ExerciseList from "../components/ExerciseList";
 
 const EXERCISES = [
@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addExercise: id => dispatch(addExercise(id))
+  openExerciseModal: exercise => dispatch(showModal({ open: true, exercise })),
 });
 
 export default connect(

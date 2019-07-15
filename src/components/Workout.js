@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SelectedExercise from "./SelectedExercise";
 import { EXERCISES } from "../actions";
 
-const Workout = ({ workout, removeExercise }) => (
+const Workout = ({ workout, removeExercise, toggleExerciseComplete }) => (
   <div className="workout">
     <h2>Current Workout</h2>
     <table>
@@ -22,10 +22,10 @@ const Workout = ({ workout, removeExercise }) => (
             Remove
           </th>
         </tr>
-        {workout.map(exerciseId => {
-          const { id } = exerciseId;
+        {workout.map(currentExercise => {
+          const { id } = currentExercise;
           const exercise = EXERCISES[id];
-          return <SelectedExercise key={id} {...exercise} onClick={() => removeExercise(id)} />;
+          return <SelectedExercise key={id} {...exercise} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
         })}
       </tbody>
     </table>
@@ -36,9 +36,13 @@ Workout.propTypes = {
   workout: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
+      sets: PropTypes.number.isRequired,
+      reps: PropTypes.number.isRequired,
+      complete: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired,
-  removeExercise: PropTypes.func.isRequired
+  removeExercise: PropTypes.func.isRequired,
+  toggleExerciseComplete: PropTypes.func.isRequired,
 };
 
 export default Workout;

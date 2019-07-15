@@ -10,13 +10,18 @@ export const EXERCISES = [
   { group: "Legs", name: "Leg Extensions", visible: true },
 ];
 
-export const addExercise = id => ({
+export const addExercise = exercise => ({
   type: "ADD_EXERCISE",
-  id
+  ...exercise,
 });
 
 export const removeExercise = id => ({
   type: "REMOVE_EXERCISE",
+  id
+});
+
+export const toggleExerciseComplete = id => ({
+  type: "COMPLETE_EXERCISE",
   id
 });
 
@@ -28,4 +33,14 @@ export const hideExercise = id => ({
 export const setTextFilter = filter => ({
   type: "SET_TEXT_FILTER",
   filter
+});
+
+export const hideModal = () => ({
+  type: "HIDE_MODAL",
+});
+
+export const showModal = (modalProps, modalType) => ({
+  type: "SHOW_MODAL",
+  modalProps,
+  modalType,
 });

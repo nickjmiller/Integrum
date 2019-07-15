@@ -41,3 +41,14 @@ table {
 button {
   width: 100%;
 }
+
+.complete {
+  text-decoration: line-through;
+  color: green;
+}
+
+.exercise-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
+}

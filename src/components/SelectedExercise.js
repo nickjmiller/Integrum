@@ -1,19 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SelectedExercise = ({ onClick, name }) => (
-    <tr className="selected-exercise">
-      <td>
-      {name}
+const SelectedExercise = ({ buttonClick, name, toggleExerciseComplete, complete, sets, reps }) =>
+(
+    <tr className={`selected-exercise${complete ? " complete" : ""}`}>
+      <td onClick={toggleExerciseComplete}>
+        {name}
       </td>
       <td>
-      12
+      {reps}
       </td>
       <td>
-      3
+      {sets}
       </td>
       <td>
-      <button onClick={onClick}>
+      <button onClick={buttonClick}>
           X
       </button>
       </td>
@@ -21,8 +22,12 @@ const SelectedExercise = ({ onClick, name }) => (
 );
 
 SelectedExercise.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  toggleExerciseComplete: PropTypes.func.isRequired,
+  buttonClick: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
+  complete: PropTypes.bool.isRequired,
+  sets: PropTypes.number.isRequired,
+  reps: PropTypes.number.isRequired,
 };
 
 export default SelectedExercise;

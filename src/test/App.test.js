@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "../components/App";
-import AddableExerciseList from "../containers/AddableExerciseList";
-import SearchBar from "../containers/SearchBar";
-import VisibleWorkoutList from "../containers/VisibleWorkoutList";
 
 jest.mock("../containers/AddableExerciseList");
 jest.mock("../containers/SearchBar");
