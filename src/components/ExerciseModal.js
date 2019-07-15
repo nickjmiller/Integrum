@@ -11,11 +11,11 @@ export default class ExerciseModal extends React.Component {
     }
 
     handleRepChange(e) {
-        this.exercise.reps = parseInt(e.target.value, 10);
+        this.exercise.reps = parseInt(e.target.value, 10) || this.exercise.reps;
     }
 
     handleSetChange(e) {
-        this.exercise.sets = parseInt(e.target.value, 10);
+        this.exercise.sets = parseInt(e.target.value, 10) || this.exercise.sets;
     }
     render() {
         return (

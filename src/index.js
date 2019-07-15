@@ -7,8 +7,10 @@ import "./style/index.css";
 import rootReducer from "./reducers";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
+const persistedState = localStorage.getItem("reduxState") ? JSON.parse(localStorage.getItem("reduxState")) : {};
 
 const store = createStore(rootReducer,
+  persistedState,
   // @ts-ignore
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 
 

@@ -4,7 +4,8 @@ import Workout from "../components/Workout";
 
 
 const mapStateToProps = state => ({
-  workout: state.workout
+  workout: state.workout,
+  exerciseMap: state.exercises,
 });
 
 const mapDispatchToProps = dispatch => ({

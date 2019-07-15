@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SelectedExercise from "./SelectedExercise";
-import { EXERCISES } from "../actions";
 
-const Workout = ({ workout, removeExercise, toggleExerciseComplete }) => (
+const toggleAllExercises = (workout, toggle) => workout.forEach(exercise => toggle(exercise.id));
+
+const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete }) => (
   <div className="workout">
     <h2>Current Workout</h2>
     <table>
@@ -24,11 +25,12 @@ const Workout = ({ workout, removeExercise, toggleExerciseComplete }) => (
         </tr>
         {workout.map(currentExercise => {
           const { id } = currentExercise;
-          const exercise = EXERCISES[id];
+          const exercise = exerciseMap[id];
           return <SelectedExercise key={id} {...exercise} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
         })}
       </tbody>
     </table>
+    {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
   </div>
 );
 
