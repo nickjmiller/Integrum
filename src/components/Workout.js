@@ -5,46 +5,46 @@ import SelectedExercise from "./SelectedExercise";
 const toggleAllExercises = (workout, toggle) => workout.forEach(exercise => toggle(exercise.id));
 
 const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete }) => (
-  <div className="workout">
-    <h2>Current Workout</h2>
-    <table>
-      <tbody>
-        <tr className="selected-exercise">
-          <th>
+    <div className="workout">
+        <h2>Current Workout</h2>
+        <table>
+            <tbody>
+                <tr className="selected-exercise">
+                    <th>
             Name
-          </th>
-          <th>
+                    </th>
+                    <th>
             Reps
-          </th>
-          <th>
+                    </th>
+                    <th>
             Sets
-          </th>
-          <th>
+                    </th>
+                    <th>
             Remove
-          </th>
-        </tr>
-        {workout.map(currentExercise => {
-          const { id } = currentExercise;
-          const { name } = exerciseMap[id];
-          return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
-        })}
-      </tbody>
-    </table>
-    {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
-  </div>
+                    </th>
+                </tr>
+                {workout.map(currentExercise => {
+                    const { id } = currentExercise;
+                    const { name } = exerciseMap[id];
+                    return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
+                })}
+            </tbody>
+        </table>
+        {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
+    </div>
 );
 
 Workout.propTypes = {
-  workout: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      sets: PropTypes.number.isRequired,
-      reps: PropTypes.number.isRequired,
-      complete: PropTypes.bool.isRequired,
-    }).isRequired
-  ).isRequired,
-  removeExercise: PropTypes.func.isRequired,
-  toggleExerciseComplete: PropTypes.func.isRequired,
+    workout: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            sets: PropTypes.number.isRequired,
+            reps: PropTypes.number.isRequired,
+            complete: PropTypes.bool.isRequired,
+        }).isRequired
+    ).isRequired,
+    removeExercise: PropTypes.func.isRequired,
+    toggleExerciseComplete: PropTypes.func.isRequired,
 };
 
 export default Workout;

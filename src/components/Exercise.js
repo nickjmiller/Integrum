@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Exercise = ({ onClick, name, group }) => (
     <tr>
-        <td>
+        <td onClick={() => window.open(`https://www.youtube.com/results?search_query=${name}+how+to+exercise`)}>
             {name}
         </td>
         <td>
@@ -18,9 +18,9 @@ const Exercise = ({ onClick, name, group }) => (
 );
 
 Exercise.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  group: PropTypes.string.isRequired
+    onClick: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    group: PropTypes.string.isRequired
 };
 
 export default Exercise;

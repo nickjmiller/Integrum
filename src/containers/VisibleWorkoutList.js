@@ -4,8 +4,8 @@ import Workout from "../components/Workout";
 
 
 const mapStateToProps = state => ({
-  workout: state.workout,
-  exerciseMap: state.exercises,
+    workout: state.workout,
+    exerciseMap: state.exercises,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,6 +14,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(Workout);

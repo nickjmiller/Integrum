@@ -1,10 +1,10 @@
 const textFilter = (state = "", action) => {
-  switch (action.type) {
+    switch (action.type) {
     case "SET_TEXT_FILTER":
-      return action.filter;
+        return action.filter;
     default:
-      return state;
-  }
+        return state;
+    }
 };
 
 export default textFilter;

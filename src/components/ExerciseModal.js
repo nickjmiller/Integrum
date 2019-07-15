@@ -22,11 +22,11 @@ export default class ExerciseModal extends React.Component {
             <div className="exercise-modal">
                 <form>
                     <input type="text"
-                    placeholder="Number of reps..."
-                    onChange={this.handleRepChange}/>
+                        placeholder="Number of reps..."
+                        onChange={this.handleRepChange}/>
                     <input type="text"
-                    placeholder="Number of sets..."
-                    onChange={this.handleSetChange}/>
+                        placeholder="Number of sets..."
+                        onChange={this.handleSetChange}/>
                 </form>
                 <button onClick={() => this.props.addExercise(this.exercise)}>
                     Add {this.props.exercise.name}
@@ -38,7 +38,7 @@ export default class ExerciseModal extends React.Component {
 
 ExerciseModal.propTypes = {
     exercise: PropTypes.shape({
-          id: PropTypes.number.isRequired,
-        }).isRequired,
+        id: PropTypes.number.isRequired,
+    }).isRequired,
     addExercise: PropTypes.func.isRequired,
 };

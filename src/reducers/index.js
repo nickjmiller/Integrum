@@ -5,8 +5,8 @@ import textFilter from "./textFilter";
 import workout from "./workout";
 
 export default combineReducers({
-  textFilter,
-  workout,
-  modal,
-  exercises,
+    textFilter,
+    workout,
+    modal,
+    exercises,
 });

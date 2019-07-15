@@ -1,19 +1,19 @@
 const initialState = {
-  modalProps: {},
+    modalProps: {},
 };
 
 const modal = (state = initialState, action) => {
-  switch (action.type) {
+    switch (action.type) {
     case "SHOW_MODAL":
-      return {
-        modalProps: action.modalProps,
-        type: action.modalType,
-      };
+        return {
+            modalProps: action.modalProps,
+            type: action.modalType,
+        };
     case "HIDE_MODAL":
-      return initialState;
+        return initialState;
     default:
-      return state;
-  }
+        return state;
+    }
 };
 
 export default modal;

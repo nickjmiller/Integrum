@@ -8,10 +8,10 @@ const SearchBar = ({ dispatch }) => {
             <h2>Exercises</h2>
             <form>
                 <input type="text"
-                placeholder="Search exercises..."
-                onChange={e => {
-                    dispatch(setTextFilter(e.target.value.trim().toLowerCase()));
-                }}
+                    placeholder="Search exercises..."
+                    onChange={e => {
+                        dispatch(setTextFilter(e.target.value.trim().toLowerCase()));
+                    }}
                 />
             </form>
         </div>

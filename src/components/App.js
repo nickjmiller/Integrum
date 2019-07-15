@@ -7,21 +7,21 @@ import SearchBar from "../containers/SearchBar";
 import VisibleWorkoutList from "../containers/VisibleWorkoutList";
  
 function App() {
-  return (
-  <div className="App">
-    <header className="App-header">
-      <p>
+    return (
+        <div className="App">
+            <header className="App-header">
+                <p>
         Integrum
-      </p>
-    </header>
-    <div>
-      <VisibleWorkoutList />
-      <SearchBar />
-      <AddableExerciseList />
-      <ModalContainer />
-    </div>
-  </div>
-  );
+                </p>
+            </header>
+            <div>
+                <VisibleWorkoutList />
+                <SearchBar />
+                <AddableExerciseList />
+                <ModalContainer />
+            </div>
+        </div>
+    );
 }
 
 export default App;
