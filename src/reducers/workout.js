@@ -1,7 +1,9 @@
+import { ACTION } from "../constants";
+
 const workout = (state = [], action) => {
     let newState;
     switch (action.type) {
-    case "ADD_EXERCISE":
+    case ACTION.ADD_EXERCISE:
         if (state.find(exercise => exercise.id === action.id)) {
             return state;
         }
@@ -15,10 +17,10 @@ const workout = (state = [], action) => {
             }
         ];
         break;
-    case "REMOVE_EXERCISE":
+    case ACTION.REMOVE_EXERCISE:
         newState = state.filter(exercise => exercise.id !== action.id);
         break;
-    case "TOGGLE_EXERCISE":
+    case ACTION.TOGGLE_EXERCISE:
         newState = state.map((exercise) => {
             if (exercise.id === action.id) {
                 exercise.complete = !exercise.complete;

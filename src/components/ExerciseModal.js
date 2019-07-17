@@ -20,6 +20,7 @@ export default class ExerciseModal extends React.Component {
     render() {
         return (
             <div className="exercise-modal">
+                <h3>{this.props.exercise.name}</h3>
                 <form className="rep-set-form">
                     <label>
                         Reps
@@ -35,7 +36,7 @@ export default class ExerciseModal extends React.Component {
                     </label>
                 </form>
                 <button onClick={() => this.props.addExercise(this.exercise)}>
-                    Add {this.props.exercise.name}
+                    Add to workout
                 </button>
             </div>
         );

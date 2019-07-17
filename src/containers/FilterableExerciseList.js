@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { showModal } from "../actions";
+import { MODAL_TYPE } from "../constants";
 import ExerciseList from "../components/ExerciseList";
 
 const getExercises = (exercises, filter) => {
@@ -17,7 +18,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    openExerciseModal: exercise => dispatch(showModal({ open: true, exercise }, "ExerciseModal")),
+    openExerciseModal: exercise => dispatch(showModal({ open: true, exercise }, MODAL_TYPE.EXERCISE_MODAL)),
 });
 
 export default connect(

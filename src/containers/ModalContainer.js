@@ -6,6 +6,7 @@ import ExerciseModal from "../components/ExerciseModal";
 import FilterableExerciseList from "./FilterableExerciseList";
 import SearchBar from "./SearchBar";
 
+import { MODAL_TYPE } from "../constants";
 import { hideModal, showModal, addExercise } from "../actions";
 
 const customStyles = {
@@ -38,16 +39,18 @@ const mapDispatchToProps = dispatch => ({
 class ModalContainer extends React.Component {
     mapModalElement(modalType) {
         switch(modalType) {
-        case "ExerciseModal":
+        case MODAL_TYPE.EXERCISE_MODAL:
             return <ExerciseModal exercise={this.exercise} addExercise={this.props.addExercise}/>;
-        case "ExerciseList":
+        case MODAL_TYPE.EXERCISE_LIST:
             return (
                 <div className="exercise-list">
                     <SearchBar />
                     <FilterableExerciseList />
                 </div>);
+        case MODAL_TYPE.HIDDEN:
+            return;
         default:
-            this.closeModal();
+            throw new Error("Unrecognized modal type");
         }
     }
 

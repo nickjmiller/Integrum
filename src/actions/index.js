@@ -1,34 +1,36 @@
+import { ACTION } from "../constants";
+
 export const addExercise = exercise => ({
-    type: "ADD_EXERCISE",
+    type: ACTION.ADD_EXERCISE,
     ...exercise,
 });
 
 export const removeExercise = id => ({
-    type: "REMOVE_EXERCISE",
+    type: ACTION.REMOVE_EXERCISE,
     id
 });
 
 export const toggleExerciseComplete = id => ({
-    type: "TOGGLE_EXERCISE",
+    type: ACTION.TOGGLE_EXERCISE,
     id
 });
 
 export const hideExercise = id => ({
-    type: "HIDE_EXERCISE",
+    type: ACTION.HIDE_EXERCISE,
     id
 });
 
 export const setTextFilter = filter => ({
-    type: "SET_TEXT_FILTER",
+    type: ACTION.SET_TEXT_FILTER,
     filter
 });
 
 export const hideModal = () => ({
-    type: "HIDE_MODAL",
+    type: ACTION.HIDE_MODAL,
 });
 
 export const showModal = (modalProps, modalType) => ({
-    type: "SHOW_MODAL",
+    type: ACTION.SHOW_MODAL,
     modalProps,
     modalType,
 });

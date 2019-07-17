@@ -47,12 +47,6 @@ button {
   color: green;
 }
 
-.exercise-modal {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 60vw;
-}
-
 .exercise-table {
   margin: 4px;
   max-width: 50em;
@@ -94,4 +88,20 @@ th, td {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 4px;
   padding: 4px;
+}
+
+.exercise-modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60vw;
+}
+
+.exercise-modal h3 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+}
+
+.rep-set-form input {
+  width: 5em;
 }
