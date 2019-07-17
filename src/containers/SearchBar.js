@@ -9,6 +9,7 @@ const SearchBar = ({ dispatch }) => {
             <form>
                 <input type="text"
                     placeholder="Search exercises..."
+                    onLoad={dispatch(setTextFilter(""))}
                     onChange={e => {
                         dispatch(setTextFilter(e.target.value.trim().toLowerCase()));
                     }}

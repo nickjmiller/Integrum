@@ -91,5 +91,7 @@ th, td {
 
 .rep-set-form {
   display: grid;
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 4px;
+  padding: 4px;
 }
