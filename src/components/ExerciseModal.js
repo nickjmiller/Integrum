@@ -20,13 +20,19 @@ export default class ExerciseModal extends React.Component {
     render() {
         return (
             <div className="exercise-modal">
-                <form>
-                    <input type="text"
-                        placeholder="Number of reps..."
-                        onChange={this.handleRepChange}/>
-                    <input type="text"
-                        placeholder="Number of sets..."
-                        onChange={this.handleSetChange}/>
+                <form className="rep-set-form">
+                    <label>
+                        Reps
+                        <input type="text"
+                            placeholder="12"
+                            onChange={this.handleRepChange}/>
+                    </label>
+                    <label>
+                        Sets
+                        <input type="text"
+                            placeholder="3"
+                            onChange={this.handleSetChange}/>
+                    </label>
                 </form>
                 <button onClick={() => this.props.addExercise(this.exercise)}>
                     Add {this.props.exercise.name}

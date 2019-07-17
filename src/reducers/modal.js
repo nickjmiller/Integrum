@@ -7,7 +7,7 @@ const modal = (state = initialState, action) => {
     case "SHOW_MODAL":
         return {
             modalProps: action.modalProps,
-            type: action.modalType,
+            modalType: action.modalType,
         };
     case "HIDE_MODAL":
         return initialState;

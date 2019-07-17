@@ -84,3 +84,12 @@ th, td {
 .start-over {
   width: 100px;
 }
+
+.exercise-list {
+  text-align: center;
+}
+
+.rep-set-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr
+}

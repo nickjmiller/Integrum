@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import ReactModal from "react-modal";
 
 import ExerciseModal from "../components/ExerciseModal";
+import FilterableExerciseList from "./FilterableExerciseList";
+import SearchBar from "./SearchBar";
 
 import { hideModal, showModal, addExercise } from "../actions";
 
@@ -34,6 +36,21 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class ModalContainer extends React.Component {
+    mapModalElement(modalType) {
+        switch(modalType) {
+        case "ExerciseModal":
+            return <ExerciseModal exercise={this.exercise} addExercise={this.props.addExercise}/>;
+        case "ExerciseList":
+            return (
+                <div className="exercise-list">
+                    <SearchBar />
+                    <FilterableExerciseList />
+                </div>);
+        default:
+            this.closeModal();
+        }
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -48,6 +65,7 @@ class ModalContainer extends React.Component {
                 modalIsOpen: nextProps.modalProps.open,
             });
             this.exercise = nextProps.modalProps.exercise;
+            this.modalElement = this.mapModalElement(nextProps.modalType);
         }
     }
 
@@ -64,7 +82,7 @@ class ModalContainer extends React.Component {
                     contentLabel="Add exercise"
                     ariaHideApp={false}
                     style={customStyles}
-                >{this.exercise ? <ExerciseModal exercise={this.exercise} addExercise={this.props.addExercise}/>: <div></div>}
+                >{this.modalElement}
                 </ReactModal>
             </div>
         );

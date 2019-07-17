@@ -17,7 +17,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    openExerciseModal: exercise => dispatch(showModal({ open: true, exercise })),
+    openExerciseModal: exercise => dispatch(showModal({ open: true, exercise }, "ExerciseModal")),
 });
 
 export default connect(

@@ -4,7 +4,7 @@ import SelectedExercise from "./SelectedExercise";
 
 const toggleAllExercises = (workout, toggle) => workout.forEach(exercise => toggle(exercise.id));
 
-const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete }) => (
+const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete, showModal }) => (
     <div className="workout">
         <h2>Current Workout</h2>
         <table>
@@ -28,9 +28,23 @@ const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete 
                     const { name } = exerciseMap[id];
                     return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
                 })}
+                <tr className="selected-exercise">
+                    <td>
+                        {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : 
+                            <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        <button onClick={() => showModal()}>+</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
     </div>
 );
 
@@ -45,6 +59,7 @@ Workout.propTypes = {
     ).isRequired,
     removeExercise: PropTypes.func.isRequired,
     toggleExerciseComplete: PropTypes.func.isRequired,
+    showModal: PropTypes.func.isRequired,
 };
 
 export default Workout;

@@ -1,9 +1,7 @@
 import React from "react";
 import "../style/App.css";
 
-import AddableExerciseList from "../containers/AddableExerciseList";
 import ModalContainer from "../containers/ModalContainer";
-import SearchBar from "../containers/SearchBar";
 import VisibleWorkoutList from "../containers/VisibleWorkoutList";
  
 function App() {
@@ -16,8 +14,6 @@ function App() {
             </header>
             <div>
                 <VisibleWorkoutList />
-                <SearchBar />
-                <AddableExerciseList />
                 <ModalContainer />
             </div>
         </div>
