@@ -8,6 +8,7 @@
     "react-dom": "^16.8.6",
     "react-modal": "^3.9.1",
     "react-redux": "^7.1.0",
+    "react-tabs": "^3.0.0",
     "redux": "^4.0.4"
   },
   "devDependencies": {
@@ -24,7 +25,6 @@
     "lint": "eslint ./src --fix",
     "serve": "npm run build && serve -s build",
     "analyze": "npm run build && source-map-explorer 'build/static/js/*.js'"
-
   },
   "browserslist": {
     "production": [

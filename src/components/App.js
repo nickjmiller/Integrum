@@ -2,7 +2,7 @@ import React from "react";
 import "../style/App.css";
 
 import ModalContainer from "../containers/ModalContainer";
-import VisibleWorkoutList from "../containers/VisibleWorkoutList";
+import { TabComponent } from "./TabComponent";
  
 function App() {
     return (
@@ -12,10 +12,8 @@ function App() {
         Integrum
                 </p>
             </header>
-            <div>
-                <VisibleWorkoutList />
-                <ModalContainer />
-            </div>
+            <TabComponent />
+            <ModalContainer />
         </div>
     );
 }
