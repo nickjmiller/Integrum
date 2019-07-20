@@ -75,6 +75,7 @@ class ModalContainer extends React.Component {
     }
 
     closeModal() {
+        this.props.hideModal();
         this.setState({ modalIsOpen: false });
     }
 
