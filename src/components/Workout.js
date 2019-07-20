@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import SelectedExercise from "./SelectedExercise";
 
-const toggleAllExercises = (workout, toggle) => workout.forEach(exercise => toggle(exercise.id));
+const toggleAllExercises = (workout, toggle, index) => workout.forEach(exercise => toggle(exercise.id, index));
 
-const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete, showModal }) => (
+const Workout = ({ exerciseMap, workout, index, removeExercise, toggleExerciseComplete, showModal }) => (
     <div className="workout">
-        <h2>Current Workout</h2>
         <table>
             <tbody>
                 <tr className="selected-exercise">
@@ -26,12 +25,12 @@ const Workout = ({ exerciseMap, workout, removeExercise, toggleExerciseComplete,
                 {workout.map(currentExercise => {
                     const { id } = currentExercise;
                     const { name } = exerciseMap[id];
-                    return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id)} toggleExerciseComplete={() => toggleExerciseComplete(id)}/>;
+                    return <SelectedExercise key={id} name={name} {...currentExercise} buttonClick={() => removeExercise(id, index)} toggleExerciseComplete={() => toggleExerciseComplete(id, index)}/>;
                 })}
                 <tr className="selected-exercise">
                     <td>
                         {(!workout.length || workout.find(exercise => !exercise.complete)) ? null : 
-                            <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete)} className="start-over">Start over?</button>}
+                            <button onClick={() => toggleAllExercises(workout, toggleExerciseComplete, index)} className="start-over">Start over?</button>}
                     </td>
                     <td>
 

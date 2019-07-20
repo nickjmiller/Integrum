@@ -3,7 +3,7 @@ import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
 
 import "react-tabs/style/react-tabs.css";
 
-import VisibleWorkoutList from "../containers/VisibleWorkoutList";
+import ChangeableScheduleContainer from "../containers/ChangeableScheduleContainer";
 import FilterableExerciseList from "../containers/FilterableExerciseList";
 import SearchBar from "../containers/SearchBar";
 
@@ -21,7 +21,7 @@ export const TabComponent = () => (
             </Tab>
         </TabList> 
         <TabPanel>
-            <VisibleWorkoutList />
+            <ChangeableScheduleContainer />
         </TabPanel>
         <TabPanel>
             <div>

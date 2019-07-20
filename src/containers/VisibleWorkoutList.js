@@ -5,13 +5,12 @@ import { MODAL_TYPE } from "../constants";
 
 
 const mapStateToProps = state => ({
-    workout: state.workout,
     exerciseMap: state.exercises,
 });
 
 const mapDispatchToProps = dispatch => ({
-    removeExercise: id => dispatch(removeExercise(id)),
-    toggleExerciseComplete: id => dispatch(toggleExerciseComplete(id)),
+    removeExercise: (id, index) => dispatch(removeExercise(id, index)),
+    toggleExerciseComplete: (id, index) => dispatch(toggleExerciseComplete(id, index)),
     showModal: () => dispatch(showModal({ open: true }, MODAL_TYPE.EXERCISE_LIST)),
 });
 

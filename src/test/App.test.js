@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import App from "../components/App";
 
 jest.mock("../containers/ModalContainer");
-jest.mock("../containers/VisibleWorkoutList");
+jest.mock("../containers/ChangeableScheduleContainer");
 
 it("renders without crashing", () => {
     const div = document.createElement("div");

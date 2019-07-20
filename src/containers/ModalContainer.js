@@ -23,6 +23,7 @@ const customStyles = {
 
 const mapStateToProps = state => ({
     ...state.modal,
+    schedule: state.schedule,
 });
 
 const mapDispatchToProps = dispatch => ({ 
@@ -30,8 +31,8 @@ const mapDispatchToProps = dispatch => ({
     showModal: (modalProps, modalType) => {
         dispatch(showModal({ modalProps, modalType }));
     },
-    addExercise: exercise => {
-        dispatch(addExercise(exercise));
+    addExercise: (exercise, index) => {
+        dispatch(addExercise(exercise, index));
         dispatch(hideModal());
     },
 });
@@ -40,7 +41,7 @@ class ModalContainer extends React.Component {
     mapModalElement(modalType) {
         switch(modalType) {
         case MODAL_TYPE.EXERCISE_MODAL:
-            return <ExerciseModal exercise={this.exercise} addExercise={this.props.addExercise}/>;
+            return <ExerciseModal exercise={this.exercise} schedule={this.schedule} addExercise={this.props.addExercise}/>;
         case MODAL_TYPE.EXERCISE_LIST:
             return (
                 <div className="exercise-list">
@@ -68,6 +69,7 @@ class ModalContainer extends React.Component {
                 modalIsOpen: nextProps.modalProps.open,
             });
             this.exercise = nextProps.modalProps.exercise;
+            this.schedule = nextProps.schedule;
             this.modalElement = this.mapModalElement(nextProps.modalType);
         }
     }
